@@ -39,6 +39,5 @@ public class GiaoDienChinh extends AppCompatActivity {
                 return true;
             }
         });
-
     }
 }
