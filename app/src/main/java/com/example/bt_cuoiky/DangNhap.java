@@ -29,7 +29,7 @@ public class DangNhap extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dang_nhap);
         database = new DatabaseHelper(this);
-//        database.deleteAll();
+ //       database.deleteAll();
         edtUseName = (EditText) findViewById(R.id.edtUserName);
         edtPassWord = (EditText) findViewById(R.id.edtPassword);
         btnSignIn = (Button) findViewById(R.id.btnSignIn);
@@ -81,22 +81,22 @@ public class DangNhap extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        imageButtonMat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                edtPassWord.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                imageButtonNhamMat.setVisibility(View.VISIBLE);
-                imageButtonMat.setVisibility(View.INVISIBLE);
-            }
-        });
-        imageButtonNhamMat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                edtPassWord.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                imageButtonNhamMat.setVisibility(View.INVISIBLE);
-                imageButtonMat.setVisibility(View.VISIBLE);
-            }
-        });
+//        imageButtonMat.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                edtPassWord.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+//                imageButtonNhamMat.setVisibility(View.VISIBLE);
+//                imageButtonMat.setVisibility(View.INVISIBLE);
+//            }
+//        });
+//        imageButtonNhamMat.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                edtPassWord.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+//                imageButtonNhamMat.setVisibility(View.INVISIBLE);
+//                imageButtonMat.setVisibility(View.VISIBLE);
+//            }
+//        });
 
     }
 }

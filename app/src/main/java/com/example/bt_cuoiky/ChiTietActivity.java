@@ -46,32 +46,6 @@ public class ChiTietActivity extends AppCompatActivity {
         });
     }
 
-//    private class LoadImage extends AsyncTask<String, Void, Bitmap> {
-//        Bitmap bitmapHinh = null;
-//        @Override
-//        protected Bitmap doInBackground(String... strings) {
-//            try {
-//                URL url = new URL(strings[0]);
-//
-//                InputStream inputStream = url.openConnection().getInputStream();
-//
-//                bitmapHinh = BitmapFactory.decodeStream(inputStream);
-//            } catch (MalformedURLException e) {
-//                e.printStackTrace();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            return bitmapHinh;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(Bitmap bitmap) {
-//            super.onPostExecute(bitmap);
-//            nen.setImageBitmap(bitmap);
-//            anh.setImageBitmap(bitmap);
-//        }
-//    }
-
     @Override
     public void onBackPressed() {
         startActivity(new Intent(ChiTietActivity.this, Phim.class));
