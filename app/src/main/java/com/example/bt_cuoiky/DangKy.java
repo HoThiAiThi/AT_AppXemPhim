@@ -55,6 +55,7 @@ public class DangKy extends AppCompatActivity {
                             tk.setEmail(edtEmail.getText().toString());
                             tk.setPhone(edtPhoneNumber.getText().toString());
                             DangNhap.database.insertTaiKhoan(tk);
+                            //Toast.makeText(DangKy.this, "Dang ki thanh cong", Toast.LENGTH_SHORT).show();
                             String regex= "^\\w+[a-z0-9]*@{1}\\w+mail.com$";
                             Pattern pattern =Pattern.compile(regex);
                             Matcher matcher =pattern.matcher(edtEmail.getText().toString());
