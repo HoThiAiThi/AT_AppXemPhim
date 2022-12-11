@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class DangKy extends AppCompatActivity {
     private EditText edtUserName,edtEmail,edtPassWord,edtConfirmPassword,edtFullName,edtPhoneNumber;
     private Button btnSignIn,btnSignUp;
@@ -52,7 +55,16 @@ public class DangKy extends AppCompatActivity {
                             tk.setEmail(edtEmail.getText().toString());
                             tk.setPhone(edtPhoneNumber.getText().toString());
                             DangNhap.database.insertTaiKhoan(tk);
-                            Toast.makeText(DangKy.this, "Dang ki thanh cong", Toast.LENGTH_SHORT).show();
+                            String regex= "^\\w+[a-z0-9]*@{1}\\w+mail.com$";
+                            Pattern pattern =Pattern.compile(regex);
+                            Matcher matcher =pattern.matcher(edtEmail.getText().toString());
+
+                            if(!matcher.find()){
+                                Toast.makeText(DangKy.this, "Sai dinh dang mail", Toast.LENGTH_SHORT).show();
+                            }else{
+                                Toast.makeText(DangKy.this, "Dang ki thanh cong ", Toast.LENGTH_SHORT).show();
+                                status= true;
+                            }
                             Intent intent = new Intent(DangKy.this, DangNhap.class);
                             startActivity(intent);
                         }
