@@ -74,7 +74,6 @@ public class DangKy extends AppCompatActivity {
                                 Intent intent = new Intent(DangKy.this, DangNhap.class);
                                 startActivity(intent);
                             }
-
                         }
 
                     }else{
@@ -91,6 +90,5 @@ public class DangKy extends AppCompatActivity {
 //                startActivity(intent);
 //            }
 //        });
-
     }
 }
