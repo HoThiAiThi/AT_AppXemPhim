@@ -48,26 +48,34 @@ public class DangKy extends AppCompatActivity {
                             }
                         }
                         if(!dataAccount.moveToNext() && !status ){
-                            TaiKhoan tk = new TaiKhoan();
-                            tk.setUserName(edtUserName.getText().toString());
-                            tk.setPassword(edtPassWord.getText().toString());
-                            tk.setFullname(edtFullName.getText().toString());
-                            tk.setEmail(edtEmail.getText().toString());
-                            tk.setPhone(edtPhoneNumber.getText().toString());
-                            DangNhap.database.insertTaiKhoan(tk);
+
                             //Toast.makeText(DangKy.this, "Dang ki thanh cong", Toast.LENGTH_SHORT).show();
                             String regex= "^\\w+[a-z0-9]*@{1}\\w+mail.com$";
                             Pattern pattern =Pattern.compile(regex);
                             Matcher matcher =pattern.matcher(edtEmail.getText().toString());
-
+                            String regexPhoneNumber= "^(0|\\+84)(\\s|\\.)?((3[2-9])|(5[689])|(7[06-9])|(8[1-689])|(9[0-46-9]))(\\d)(\\s|\\.)?(\\d{3})(\\s|\\.)?(\\d{3})$";
+                            Pattern patternPhoneNumber = Pattern.compile(regexPhoneNumber);
+                            Matcher matcherPhoneNumber = patternPhoneNumber.matcher(edtPhoneNumber.getText().toString());
                             if(!matcher.find()){
                                 Toast.makeText(DangKy.this, "Sai dinh dang mail", Toast.LENGTH_SHORT).show();
-                            }else{
+
+                            }else if(!matcherPhoneNumber.find()) {
+                                Toast.makeText(DangKy.this, "Số điện thoại không hợp lệ !!", Toast.LENGTH_SHORT).show();
+                            }
+                            else{
                                 Toast.makeText(DangKy.this, "Dang ki thanh cong ", Toast.LENGTH_SHORT).show();
                                 status= true;
+                                TaiKhoan tk = new TaiKhoan();
+                                tk.setUserName(edtUserName.getText().toString());
+                                tk.setPassword(edtPassWord.getText().toString());
+                                tk.setFullname(edtFullName.getText().toString());
+                                tk.setEmail(edtEmail.getText().toString());
+                                tk.setPhone(edtPhoneNumber.getText().toString());
+                                DangNhap.database.insertTaiKhoan(tk);
+                                Intent intent = new Intent(DangKy.this, DangNhap.class);
+                                startActivity(intent);
                             }
-                            Intent intent = new Intent(DangKy.this, DangNhap.class);
-                            startActivity(intent);
+
                         }
 
                     }else{
