@@ -75,7 +75,6 @@ public class DangKy extends AppCompatActivity {
                                 startActivity(intent);
                             }
                         }
-
                     }else{
                         Toast.makeText(DangKy.this, "Mat Khau Khong Khop", Toast.LENGTH_SHORT).show();
                     }
