@@ -82,7 +82,6 @@ public class DangNhap extends AppCompatActivity {
             }
         });
 
-
 //        imageButtonMat.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
