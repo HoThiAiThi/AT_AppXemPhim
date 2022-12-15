@@ -48,7 +48,7 @@ public class DangKy extends AppCompatActivity {
                             }
                         }
                         if(!dataAccount.moveToNext() && !status ){
-                            
+
                             String regex= "^\\w+[a-z0-9]*@{1}\\w+mail.com$";
                             Pattern pattern =Pattern.compile(regex);
                             Matcher matcher =pattern.matcher(edtEmail.getText().toString());
@@ -82,12 +82,12 @@ public class DangKy extends AppCompatActivity {
                     Toast.makeText(DangKy.this, "Ban can nhap day du thong tin!!", Toast.LENGTH_SHORT).show();
             }
         });
-//        btnSignIn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(DangKy.this, DangNhap.class);
-//                startActivity(intent);
-//            }
-//        });
+        btnSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DangKy.this, DangNhap.class);
+                startActivity(intent);
+            }
+        });
     }
 }
