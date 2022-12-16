@@ -81,23 +81,5 @@ public class DangNhap extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-//        imageButtonMat.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                edtPassWord.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-//                imageButtonNhamMat.setVisibility(View.VISIBLE);
-//                imageButtonMat.setVisibility(View.INVISIBLE);
-//            }
-//        });
-//        imageButtonNhamMat.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                edtPassWord.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-//                imageButtonNhamMat.setVisibility(View.INVISIBLE);
-//                imageButtonMat.setVisibility(View.VISIBLE);
-//            }
-//        });
-
     }
 }
